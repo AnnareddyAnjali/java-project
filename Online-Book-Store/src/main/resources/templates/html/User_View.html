@@ -1,0 +1,68 @@
+<html xmlns:th="https://www.thymeleaf.org">
+   <head>
+      <meta charset="utf-8">
+      <title>Menu</title>
+ 
+ <!-- Include CSS File -->
+ 
+      <link th:href="@{/css/menu_style.css}" rel="stylesheet">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+ 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>  
+  
+   <body>   
+      <nav>
+         <div class="logo">
+            Online Book Store
+         </div>
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="/User_Home">Home</a></li>
+            <li><a href="/User_Books">Search Book</a></li>
+            <li><a href="/User_Buy_Book">Buy Book</a></li>
+            <li><a href="/Order_Details">Order Details</a></li>
+			<li><a href="/User_Return_Book">Return Book</a></li>
+			<li><a href="/User_Issue_Book">Issue Book</a></li>
+			<li><a href="/User_Request_Book">Request Book</a></li>
+			<li><a href="/User_Password_Change">Password Change</a></li>
+            <li><a href="#"><span th:text="${User}"></span></a></li>
+			<br><br>
+            <li><a href="/">Logout</a></li>
+         </ul>
+      </nav>
+	  
+	  <p style="color: white;">
+	        <pre style="color: white;float: right;background-color: hsla(0, 0%, 0%,0.6); border-radius: 10px;padding-top: 20px;padding-right: 20px;">
+				“Libraries store the energy that fuels the imagination...<br>
+				 They open up windows to the world and inspire us to explore and achieve and contribute to improving our quality of life...<br>
+				  Libraries change lives for the better..
+	        </pre>
+	        
+	        <img src="https://img.freepik.com/free-photo/3d-rendered-illustration-businessman-with-laptop-books_1057-45897.jpg?t=st=1720025275~exp=1720028875~hmac=586540e54a49db3d25e806a1f65aea56b0364c242e134e194fcd15498224b0a4&w=740" style="border-radius: 400px;" width="450px";height="200px";></img>
+	        
+	        </p>
+
+      
+
+
+<div th:if="${PrintSwal == 'UserLogin'}">    
+<script>swal("User Login Sucessfully");</script>
+</div>
+
+<div th:if="${PrintSwal == 'Order_Details_Empty'} ">    
+<script>swal("Data Not Found");</script>
+</div>
+
+
+
+</body>
+
+
+
+
+</html>
